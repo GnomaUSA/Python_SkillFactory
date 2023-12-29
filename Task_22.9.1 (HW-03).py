@@ -23,7 +23,21 @@ def sort(array): # сортировка пузырьком
 sort(array)
 print(array)
 
-input_num = float(input('Enter number: '))
+input_num = input('Enter number: ')
+def check_num(s): # проверка что s это число
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
+if all(check_num(s) for s in input_num): # проверка что введено число
+    input_num = float(input_num)
+    print("Entered value is numbers.")
+else:
+    print("The entered string contains more than just numbers. Check the entered data")
+    exit()
+
 def search(array, input_num):
     left = 0
     right = len(array)
