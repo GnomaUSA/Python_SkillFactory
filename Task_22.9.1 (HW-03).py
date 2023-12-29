@@ -24,6 +24,7 @@ sort(array)
 print(array)
 
 input_num = input('Enter number: ')
+
 def check_num(s): # проверка что s это число
     try:
         float(s)
@@ -31,7 +32,7 @@ def check_num(s): # проверка что s это число
     except ValueError:
         return False
 
-if all(check_num(s) for s in input_num): # проверка что введено число
+if check_num(input_num): # проверка что введено число
     input_num = float(input_num)
     print("Entered value is numbers.")
 else:
